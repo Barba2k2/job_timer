@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "314366669141",
+    "project_id": "job-timer-dw-7-e5a6d",
+    "storage_bucket": "job-timer-dw-7-e5a6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314366669141:android:38ee41048d8a545da27fdc",
+        "android_client_info": {
+          "package_name": "br.com.barbaTech.job_timer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314366669141-kuo24gi0jrj72r6rl19vpggvg83aqdr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.barbaTech.job_timer",
+            "certificate_hash": "f623719ad53a0c43ac3532b6aad38740e9047058"
+          }
+        },
+        {
+          "client_id": "314366669141-kb7kt1vg9ormpo1rpf4fqa8t8o3dbvv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhGwxLOcNLlngGs0OgowW6X21u7xXG0Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314366669141-kb7kt1vg9ormpo1rpf4fqa8t8o3dbvv1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "314366669141-95rbe6qi3q6p35siobnl0qan6a1745pm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.barbaTech.jobTimer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

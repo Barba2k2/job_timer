@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>314366669141-95rbe6qi3q6p35siobnl0qan6a1745pm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.314366669141-95rbe6qi3q6p35siobnl0qan6a1745pm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>314366669141-kuo24gi0jrj72r6rl19vpggvg83aqdr8.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDUS3BhR_iZ_I64ExMALT2M2U3wQJzRyew</string>
+	<key>GCM_SENDER_ID</key>
+	<string>314366669141</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.barbaTech.jobTimer</string>
+	<key>PROJECT_ID</key>
+	<string>job-timer-dw-7-e5a6d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>job-timer-dw-7-e5a6d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:314366669141:ios:e64ec8b4276be816a27fdc</string>
+</dict>
+</plist>
