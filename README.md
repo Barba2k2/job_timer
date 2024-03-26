@@ -36,7 +36,7 @@
 
 <h2>📦 Assets</h2>
 
-- UI Design criado para o evento: <a href="https://www.figma.com/file/02eLp1LEMaZNbolCNBSyKA/Delivery-App?node-id=0%3A1">**Vakinha Burger**</a>
+- UI Design criado para o evento: 
 ---   
 
 <h2>🛠️ Funcionalidades e Tecnologias Estudadas</h2>
