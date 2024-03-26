@@ -52,10 +52,11 @@ packages:
   asuka:
     dependency: "direct main"
     description:
-      name: asuka
-      sha256: "2cdff43305cbbe31faecbf275931e3a8f8e2ef91f8ffc2b961a3bbaafff5d959"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: "82e0b98497d19d42e974d8252b31d13fde8e4ffb"
+      resolved-ref: "82e0b98497d19d42e974d8252b31d13fde8e4ffb"
+      url: "https://github.com/Flutterando/asuka.git"
+    source: git
     version: "2.2.0"
   async:
     dependency: transitive
