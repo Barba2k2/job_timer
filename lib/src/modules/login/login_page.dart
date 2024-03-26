@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[200],
+                    backgroundColor: Colors.white.withOpacity(0.99),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -48,11 +48,11 @@ class LoginPage extends StatelessWidget {
                         width: 10,
                       ),
                       const Text(
-                        'Google',
+                        'Login com o Google',
                         style: TextStyle(
                           fontSize: 24,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w600,
                         ),
                       )
                     ],
