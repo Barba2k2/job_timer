@@ -24,9 +24,9 @@ dependencies:
   # General
 
   # Fireabse
-  firebase_core: ^1.17.1
-  firebase_auth: ^3.3.19
-  google_sign_in: ^5.3.2
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.17.9
+  google_sign_in: ^6.2.1
   # Firebase End
 
   #Bloc
