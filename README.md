@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/images/logo.png" width="150" alt="Logo App Job Timer"/>
+    <img src="https://github.com/Barba2k2/job_timer/blob/main/assets/images/logo.png" width="150" alt="Logo App Job Timer"/>
 </p>
 
 <h1 align="center">Job Timer</h1>
