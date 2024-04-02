@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/modules/login/login_page.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 import 'controller/login_controller.dart';
+import 'login_page.dart';
 
 class LoginModule extends Module {
   @override

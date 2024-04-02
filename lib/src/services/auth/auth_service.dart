@@ -1,4 +1,4 @@
-abstract interface class AuthService {
+abstract class AuthService {
   Future<void> singIn();
   Future<void> singOut();
 }

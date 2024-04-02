@@ -23,6 +23,7 @@ linter:
   rules:
     - prefer_const_constructors: true
     - prefer_relative_imports: true
+    - non_constant_identifier_names: true
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

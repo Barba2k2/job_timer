@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/modules/home/home_page.dart';
+
+import 'home_page.dart';
 
 class HomeModule extends Module {
   @override
@@ -7,6 +8,9 @@ class HomeModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => const HomePage()),
+        ChildRoute(
+          '/',
+          child: (context, args) => const HomePage(),
+        ),
       ];
 }

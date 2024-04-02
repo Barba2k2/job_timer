@@ -1,7 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:job_timer/src/modules/login/controller/login_controller.dart';
+
+import 'controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController controller;

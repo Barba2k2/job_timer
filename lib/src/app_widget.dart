@@ -1,7 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/core/ui/app_config_ui.dart';
+
+import 'core/ui/app_config_ui.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});

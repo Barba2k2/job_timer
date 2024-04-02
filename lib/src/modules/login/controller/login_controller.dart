@@ -4,7 +4,8 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:job_timer/src/services/auth/auth_service.dart';
+
+import '../../../services/auth/auth_service.dart';
 
 part 'login_state.dart';
 
