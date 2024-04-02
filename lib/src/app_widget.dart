@@ -11,15 +11,14 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/');
+    // Modular.setInitialRoute('/');
 
     return MaterialApp.router(
-      title: 'Job Timer',
+      theme: AppConfigUi.theme,
       builder: Asuka.builder,
+      title: 'Job Timer',
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
-      darkTheme: AppConfigUI.theme,
-      theme: AppConfigUI.theme,
       debugShowCheckedModeBanner: false,
     );
   }
