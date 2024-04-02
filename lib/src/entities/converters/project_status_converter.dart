@@ -1,17 +1,18 @@
-import 'package:isar/isar.dart';
 
-import '../project_status.dart';
+// import 'package:isar/isar.dart';
 
-class ProjectStatusConverter extends TypeConverter<ProjectStatus, int> {
-  const ProjectStatusConverter();
+// import '../project_status.dart';
 
-  @override
-  ProjectStatus fromIsar(int object) {
-    return ProjectStatus.values[object];
-  }
+// class ProjectStatusConverter extends TypeConverter<ProjectStatus, int> {
+//   const ProjectStatusConverter();
 
-  @override
-  int toIsar(ProjectStatus object) {
-    return object.index;
-  }
-}
+//   @override
+//   ProjectStatus fromIsar(int object) {
+//     return ProjectStatus.values[object];
+//   }
+
+//   @override
+//   int toIsar(ProjectStatus object) {
+//     return object.index;
+//   }
+// }
