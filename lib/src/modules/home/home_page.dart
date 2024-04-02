@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
+
+import 'widgets/header_projects_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,10 +9,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
+      drawer: const Drawer(
+        child: SafeArea(
+          child: ListTile(
+            title: Text('Sair'),
+          ),
+        ),
       ),
-      body: Container(),
+      body: CustomScrollView(
+        slivers: [
+          const SliverAppBar(
+            backgroundColor: Colors.blue,
+            title: Text('Projetos'),
+            expandedHeight: 100,
+            toolbarHeight: 100,
+            centerTitle: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(20),
+              ),
+            ),
+          ),
+          SliverPersistentHeader(
+            delegate: HeaderProjectsMenu(),
+            pinned: true,
+          ),
+        ],
+      ),
     );
   }
 }
