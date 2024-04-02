@@ -20,7 +20,7 @@ dependencies:
   # Moduelar End
 
   # General
-  validatorless: ^1.2.1
+  validatorless: ^1.2.3
   fl_chart: ^0.51.0
   # General
 
