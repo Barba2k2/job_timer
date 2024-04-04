@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/modules/project/project_module.dart';
-import 'package:job_timer/src/repository/projects/projects_repository.dart';
-import 'package:job_timer/src/repository/projects/projects_repository_impl.dart';
-import 'package:job_timer/src/services/projects/project_service_impl.dart';
+import 'modules/project/project_module.dart';
+import 'repository/projects/projects_repository.dart';
+import 'repository/projects/projects_repository_impl.dart';
+import 'services/projects/project_service_impl.dart';
 
 import 'core/database/database.dart';
 import 'core/database/database_impl.dart';

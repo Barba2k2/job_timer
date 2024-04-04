@@ -1,8 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/entities/project_status.dart';
 
 import '../../../core/ui/app_config_ui.dart';
+import '../../../entities/project_status.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
   @override
