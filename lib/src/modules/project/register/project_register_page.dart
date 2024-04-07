@@ -80,7 +80,8 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                   validator: Validatorless.multiple(
                     [
                       Validatorless.required(
-                          'Estimativa de horas é obrigatória'),
+                        'Estimativa de horas é obrigatória',
+                      ),
                       Validatorless.number('Permitido somente números'),
                     ],
                   ),

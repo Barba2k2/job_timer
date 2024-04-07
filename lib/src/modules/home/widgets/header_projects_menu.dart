@@ -57,9 +57,9 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
               SizedBox(
                 width: constraints.maxWidth * .4,
                 child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppConfigUI.theme.primaryColor,
-                  ),
+                  // style: ElevatedButton.styleFrom(
+                  //   backgroundColor: AppConfigUI.theme.primaryColor,
+                  // ),
                   onPressed: () async {
                     await Modular.to.pushNamed('/project/register/');
                     controller.loadProjects();

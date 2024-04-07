@@ -22,9 +22,9 @@ class ButtonWithLoader<B extends StateStreamable<S>, S>
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppConfigUI.theme.primaryColor,
-      ),
+      // style: ElevatedButton.styleFrom(
+      //   backgroundColor: AppConfigUI.theme.primaryColor,
+      // ),
       onPressed: onPressed,
       child: BlocSelector<B, S, bool>(
         bloc: bloc,

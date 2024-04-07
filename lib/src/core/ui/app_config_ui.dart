@@ -23,6 +23,11 @@ class AppConfigUI {
 
   static final ThemeData theme = ThemeData(
     primarySwatch: _primarySwatch,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xFF0066B0),
+      iconTheme: IconThemeData(color: Colors.white),
+      centerTitle: true,
+    ),
     primaryColor: const Color(0xFF0066B0), // # Primary color
     primaryColorLight: const Color(0xFF219FFF), // # Secondary color
     inputDecorationTheme: const InputDecorationTheme(
@@ -43,6 +48,7 @@ class AppConfigUI {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        backgroundColor: _primarySwatch,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

@@ -37,8 +37,13 @@ class HomePage extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             const SliverAppBar(
-              backgroundColor: Colors.blue,
-              title: Text('Projetos'),
+              // backgroundColor: Colors.blue,
+              title: Text(
+                'Projetos',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               expandedHeight: 100,
               toolbarHeight: 100,
               centerTitle: true,
