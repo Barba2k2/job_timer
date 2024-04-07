@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/core/ui/job_timer_icons.dart';
-import 'package:job_timer/src/view_model/project_model.dart';
+
+import '../../../core/ui/job_timer_icons.dart';
+import '../../../view_model/project_model.dart';
 
 class ProjectTile extends StatelessWidget {
   final ProjectModel projectModel;

@@ -1,10 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:job_timer/src/modules/home/controller/home_controller.dart';
 
-import '../../../core/ui/app_config_ui.dart';
 import '../../../entities/project_status.dart';
+import '../controller/home_controller.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
   final HomeController controller;
@@ -57,9 +56,6 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
               SizedBox(
                 width: constraints.maxWidth * .4,
                 child: ElevatedButton.icon(
-                  // style: ElevatedButton.styleFrom(
-                  //   backgroundColor: AppConfigUI.theme.primaryColor,
-                  // ),
                   onPressed: () async {
                     await Modular.to.pushNamed('/project/register/');
                     controller.loadProjects();
