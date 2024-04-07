@@ -1,7 +1,4 @@
 // ignore_for_file: depend_on_referenced_packages
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/src/modules/home/controller/home_controller.dart';

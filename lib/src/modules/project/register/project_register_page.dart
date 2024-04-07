@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:job_timer/src/core/ui/button_with_loader.dart';
 import 'package:validatorless/validatorless.dart';
-
-import '../../../core/ui/app_config_ui.dart';
 import 'controller/project_register_controller.dart';
 
 class ProjectRegisterPage extends StatefulWidget {
@@ -95,25 +93,13 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                BlocSelector<ProjectRegisterController, ProjectRegisterStatus,
-                    bool>(
-                  bloc: widget.controller,
-                  selector: (state) {
-                    return state == ProjectRegisterStatus.loading;
-                  },
-                  builder: (context, showLoading) {
-                    return Visibility(
-                      visible: showLoading,
-                      child: const Center(
-                        child: CircularProgressIndicator.adaptive(),
-                      ),
-                    );
-                  },
-                ),
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   height: 50,
-                  child: ButtonWithLoader(
+                  child: ButtonWithLoader<ProjectRegisterController,
+                      ProjectRegisterStatus>(
+                    bloc: widget.controller,
+                    selector: (state) => state == ProjectRegisterStatus.loading,
                     onPressed: () async {
                       final formValid = _formKey.currentState?.validate();
                       if (formValid!) {
