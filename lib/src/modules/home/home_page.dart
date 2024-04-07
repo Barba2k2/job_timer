@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SliverPersistentHeader(
-              delegate: HeaderProjectsMenu(),
+              delegate: HeaderProjectsMenu(controller: controller),
               pinned: true,
             ),
             BlocSelector<HomeController, HomeState, bool>(
@@ -80,10 +80,6 @@ class HomePage extends StatelessWidget {
                     projects
                         .map(
                           (project) => ProjectTile(projectModel: project),
-                          // (project) => ListTile(
-                          //   title: Text(project.name),
-                          //   subtitle: Text('${project.estimate} horas'),
-                          // ),
                         )
                         .toList(),
                   ),

@@ -1,12 +1,21 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/src/modules/home/controller/home_controller.dart';
 
 import '../../../core/ui/app_config_ui.dart';
 import '../../../entities/project_status.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
+  final HomeController controller;
+
+  HeaderProjectsMenu({
+    required this.controller,
+  });
+
   @override
   Widget build(
     BuildContext context,
@@ -25,6 +34,7 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
               SizedBox(
                 width: constraints.maxWidth * .5,
                 child: DropdownButtonFormField<ProjectStatus>(
+                  value: ProjectStatus.emAndamento,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -40,7 +50,11 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
                         ),
                       )
                       .toList(),
-                  onChanged: (value) {},
+                  onChanged: (status) {
+                    if (status != null) {
+                      controller.filter(status);
+                    }
+                  },
                 ),
               ),
               SizedBox(
@@ -49,8 +63,9 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppConfigUI.theme.primaryColor,
                   ),
-                  onPressed: () {
-                    Modular.to.pushNamed('/project/register/');
+                  onPressed: () async {
+                    await Modular.to.pushNamed('/project/register/');
+                    controller.loadProjects();
                   },
                   icon: const Icon(
                     Icons.add,
