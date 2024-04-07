@@ -1,14 +1,22 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app_config_ui.dart';
 
-class ButtonWithLoader extends StatelessWidget {
+class ButtonWithLoader<B extends StateStreamable<S>, S>
+    extends StatelessWidget {
+  final BlocWidgetSelector<S, bool> selector;
+  final B bloc;
   final VoidCallback onPressed;
   final String label;
-  
+
   const ButtonWithLoader({
     super.key,
-    required this.onPressed, required this.label,
+    required this.selector,
+    required this.bloc,
+    required this.label,
+    required this.onPressed,
   });
 
   @override
@@ -18,11 +26,36 @@ class ButtonWithLoader extends StatelessWidget {
         backgroundColor: AppConfigUI.theme.primaryColor,
       ),
       onPressed: onPressed,
-      child: Text(
-        label,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
+      child: BlocSelector<B, S, bool>(
+        bloc: bloc,
+        selector: selector,
+        builder: (context, showLoading) {
+          if (!showLoading) {
+            return Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            );
+          }
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: CircularProgressIndicator.adaptive(
+                  backgroundColor: Colors.white,
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
