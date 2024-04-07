@@ -2,6 +2,7 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:job_timer/src/core/ui/button_with_loader.dart';
 import 'package:validatorless/validatorless.dart';
 
 import '../../../core/ui/app_config_ui.dart';
@@ -112,10 +113,7 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppConfigUI.theme.primaryColor,
-                    ),
+                  child: ButtonWithLoader(
                     onPressed: () async {
                       final formValid = _formKey.currentState?.validate();
                       if (formValid!) {
@@ -125,12 +123,7 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                         await widget.controller.register(name, estimate);
                       }
                     },
-                    child: const Text(
-                      'Salvar',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
+                    label: 'Salvar',
                   ),
                 ),
               ],
