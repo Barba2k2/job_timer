@@ -1,13 +1,21 @@
+// ignore_for_file: depend_on_referenced_packages, unused_element
+
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/src/entities/project_status.dart';
+
+import '../../../../view_model/project_model.dart';
+import '../controller/project_detail_controller.dart';
 
 class ProjectDetailsAppbar extends SliverAppBar {
-  ProjectDetailsAppbar({super.key}) : super(
-    expandedHeight: 100,
+  ProjectDetailsAppbar({required ProjectModel projectModel, super.key})
+      : super(
+          expandedHeight: 100,
           pinned: true,
           toolbarHeight: 100,
-          title: const Text(
-            'Projeto X',
-            style: TextStyle(
+          title: Text(
+            projectModel.name,
+            style: const TextStyle(
               color: Colors.white,
             ),
           ),
@@ -33,11 +41,18 @@ class ProjectDetailsAppbar extends SliverAppBar {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('10 Tasks'),
-                          _NewTasks(),
+                          Text('${projectModel.tasks.length} Tasks'),
+                          Visibility(
+                            visible:
+                                projectModel.status != ProjectStatus.finalizado,
+                            replacement: const Text('Projeto finalizado!'),
+                            child: _NewTasks(
+                              projectModel: projectModel,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -46,28 +61,39 @@ class ProjectDetailsAppbar extends SliverAppBar {
               ),
             ],
           ),
-  );
+        );
 }
 
 class _NewTasks extends StatelessWidget {
-  const _NewTasks({super.key});
+  final ProjectModel projectModel;
+
+  const _NewTasks({
+    required this.projectModel,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: CircleAvatar(
-            backgroundColor: Theme.of(context).primaryColor,
-            child: const Icon(
-              Icons.add_rounded,
-              color: Colors.white,
+    return InkWell(
+      onTap: () async {
+        await Modular.to.pushNamed('/project/task/', arguments: projectModel);
+        Modular.get<ProjectDetailController>().updateProject();
+      },
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: CircleAvatar(
+              backgroundColor: Theme.of(context).primaryColor,
+              child: const Icon(
+                Icons.add_rounded,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-        const Text('Adicionar Task')
-      ],
+          const Text('Adicionar Task')
+        ],
+      ),
     );
   }
 }

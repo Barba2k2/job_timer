@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import '../../entities/project.dart';
 import '../../entities/project_status.dart';
+import '../../entities/project_task.dart';
 import '../../repository/projects/projects_repository.dart';
 import '../../view_model/project_model.dart';
+import '../../view_model/project_task_model.dart';
 import './project_service.dart';
 
 class ProjectServiceImpl implements ProjectService {
@@ -38,4 +40,27 @@ class ProjectServiceImpl implements ProjectService {
 
     return projects.map(ProjectModel.fromEntity).toList();
   }
+
+  @override
+  Future<ProjectModel> addTask(int projectId, ProjectTaskModel task) async {
+    final projectTask = ProjectTask()
+      ..name = task.name
+      ..duration = task.duration;
+
+    final project = await _projectsRepository.addTask(projectId, projectTask);
+
+    return ProjectModel.fromEntity(project);
+  }
+
+  @override
+  Future<ProjectModel> findById(int projectId) async {
+    final project = await _projectsRepository.findById(projectId);
+
+    return ProjectModel.fromEntity(project);
+  }
+  
+  @override
+  Future<void> finish(int projectId) => _projectsRepository.finish(projectId);
+  
+  
 }

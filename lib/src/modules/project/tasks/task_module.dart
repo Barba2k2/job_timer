@@ -2,16 +2,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 import '../../../view_model/project_model.dart';
-import 'controller/project_detail_controller.dart';
-import 'project_detail_page.dart';
+import 'controller/task_controller.dart';
+import 'task_page.dart';
 
-class ProjectDetailModule extends Module {
+class TaskModule extends Module {
   @override
-  List<Bind<Object>> get binds => [
+  List<Bind> get binds => [
         BlocBind.lazySingleton(
-          (i) => ProjectDetailController(
-            projectService: i(),
-          ),
+          (i) => TaskController(projectService: i()),
         ),
       ];
 
@@ -21,8 +19,7 @@ class ProjectDetailModule extends Module {
           '/',
           child: (context, args) {
             final ProjectModel projectModel = args.data;
-
-            return ProjectDetailPage(
+            return TaskPage(
               controller: Modular.get()..setProject(projectModel),
             );
           },

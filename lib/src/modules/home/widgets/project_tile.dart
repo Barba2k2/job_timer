@@ -1,8 +1,11 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../core/ui/job_timer_icons.dart';
 import '../../../view_model/project_model.dart';
+import '../controller/home_controller.dart';
 
 class ProjectTile extends StatelessWidget {
   final ProjectModel projectModel;
@@ -14,11 +17,13 @@ class ProjectTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Modular.to.pushNamed(
+      onTap: () async {
+        await Modular.to.pushNamed(
           '/project/detail',
           arguments: projectModel,
         );
+
+        Modular.get<HomeController>().updateList();
       },
       child: Container(
         constraints: const BoxConstraints(
